@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-shop</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body onload=" onInit()">
+    <h1> Welcome to my bookshop</h1>
+    <button class="btn-new-book" onclick="onAddBook()">Create new book</button>
+    <!-- <form class="update-books-input">
+        <input type="text" name="title">
+        <input type="number" name="price">
+        <input type="submit" value="Submit" onclick="onSubmit()">
+    </form> -->
+
+    <table class="main-table">
+        <thead class="table-head">
+            <tr>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Price</td>
+                <td>Rate</td>
+                <td class="flex">Actions</td>
+            </tr>
+        </thead>
+        <tbody class="table-content">
+        </tbody>
+
+    </table>
+
+    <div class="modal">
+
+        <div class="modal-content">
+            <span onclick="closeModal()" class="close">&times;</span>
+            <hi> Title: <span class="title-modal"></span> </hi>
+            <h3> Price: <span class="price-modal"></span></h3>
+            <h5> Description: </h5>
+            <p><span class="desc-modal"></span></p>
+            <h5> Change Rate: </h5>
+            <input onchange="onSetRate(this)" type="number" class="rate" name="rate" min="0" max="10">
+        </div>
+
+    </div>
+
+
+    <script src="/js/services/util.services.js"></script>
+    <script src="/js/services/storage.service.js"></script>
+    <script src="/js/services/book.service.js"></script>
+    <script src="/js/book.controller.js"></script>
+</body>
+
+</html>
